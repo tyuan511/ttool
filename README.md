@@ -20,7 +20,7 @@ $ npm install -g @tyuan511/ttool
 $ ttool COMMAND
 running command...
 $ ttool (--version)
-@tyuan511/ttool/0.0.1 darwin-x64 node-v14.20.0
+@tyuan511/ttool/0.0.2 darwin-x64 node-v14.20.0
 $ ttool --help [COMMAND]
 USAGE
   $ ttool COMMAND
@@ -56,7 +56,7 @@ EXAMPLES
   $ ttool git
 ```
 
-_See code: [dist/commands/git.ts](https://github.com/tyuan511/ttool/blob/v0.0.1/dist/commands/git.ts)_
+_See code: [dist/commands/git.ts](https://github.com/tyuan511/ttool/blob/v0.0.2/dist/commands/git.ts)_
 
 ## `ttool help [COMMAND]`
 

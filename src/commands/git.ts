@@ -29,11 +29,25 @@ export default class Git extends Command {
       choices: refs,
     })) as any
 
+    if (selectedRefs.length === 0) {
+      return
+    }
+
+    const { isConfirm } = (await prompt({
+      name: 'isConfirm',
+      type: 'confirm',
+      message: `Confirm to delete these refs: \n${selectedRefs.map((r: string) => '- ' + r).join('\n')}\n`,
+    })) as any
+
+    if (!isConfirm) {
+      return
+    }
+
     for (const ref of selectedRefs) {
       const refObj = await repo.getReference(ref)
       refObj.delete()
     }
 
-    this.log('delete selected refs success!')
+    this.log('Delete selected refs success!')
   }
 }

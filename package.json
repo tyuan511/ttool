@@ -1,6 +1,6 @@
 {
-  "name": "ttool",
-  "version": "0.0.0",
+  "name": "@tyuan511/ttool",
+  "version": "0.0.1",
   "description": "A tools collection",
   "author": "tyuan @tyuan511",
   "bin": {

@@ -16,11 +16,11 @@ oclif example Hello World CLI
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g ttool
+$ npm install -g @tyuan511/ttool
 $ ttool COMMAND
 running command...
 $ ttool (--version)
-ttool/0.0.0 darwin-x64 node-v16.16.0
+@tyuan511/ttool/0.0.1 darwin-x64 node-v14.20.0
 $ ttool --help [COMMAND]
 USAGE
   $ ttool COMMAND
@@ -29,8 +29,7 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`ttool hello PERSON`](#ttool-hello-person)
-* [`ttool hello world`](#ttool-hello-world)
+* [`ttool git [METHOD]`](#ttool-git-method)
 * [`ttool help [COMMAND]`](#ttool-help-command)
 * [`ttool plugins`](#ttool-plugins)
 * [`ttool plugins:install PLUGIN...`](#ttool-pluginsinstall-plugin)
@@ -42,45 +41,22 @@ USAGE
 * [`ttool plugins:uninstall PLUGIN...`](#ttool-pluginsuninstall-plugin-2)
 * [`ttool plugins update`](#ttool-plugins-update)
 
-## `ttool hello PERSON`
+## `ttool git [METHOD]`
 
-Say hello
-
-```
-USAGE
-  $ ttool hello [PERSON] -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Who is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ oex hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [dist/commands/hello/index.ts](https://github.com/tyuan511/ttool/blob/v0.0.0/dist/commands/hello/index.ts)_
-
-## `ttool hello world`
-
-Say hello world
+describe the command here
 
 ```
 USAGE
-  $ ttool hello world
+  $ ttool git [METHOD]
 
 DESCRIPTION
-  Say hello world
+  describe the command here
 
 EXAMPLES
-  $ ttool hello world
-  hello world! (./src/commands/hello/world.ts)
+  $ ttool git
 ```
+
+_See code: [dist/commands/git.ts](https://github.com/tyuan511/ttool/blob/v0.0.1/dist/commands/git.ts)_
 
 ## `ttool help [COMMAND]`
 

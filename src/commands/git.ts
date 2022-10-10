@@ -22,32 +22,37 @@ export default class Git extends Command {
   private async clean() {
     const repo = await Repository.open(process.cwd())
     const refs = await repo.getReferenceNames(Reference.TYPE.LISTALL)
-    const { selectedRefs } = (await prompt({
-      name: 'selectedRefs',
-      message: 'Select refs that you want to clean',
-      type: 'multiselect',
-      choices: refs,
-    })) as any
 
-    if (selectedRefs.length === 0) {
+    const branchs = refs.filter((ref: string) => ref.startsWith('refs/heads')).map((b) => b.replace('refs/heads/', ''))
+
+    if (branchs.length === 0) {
       return
     }
+
+    const { selectedBranchs } = (await prompt({
+      name: 'selectedBranchs',
+      message: 'Select branchs that you want to delete',
+      type: 'multiselect',
+      choices: branchs,
+    })) as any
+
+    this.log(selectedBranchs)
 
     const { isConfirm } = (await prompt({
       name: 'isConfirm',
       type: 'confirm',
-      message: `Confirm to delete these refs: \n${selectedRefs.map((r: string) => '- ' + r).join('\n')}\n`,
+      message: `Confirm to delete these branchs: \n${selectedBranchs.map((r: string) => '- ' + r).join('\n')}\n`,
     })) as any
 
     if (!isConfirm) {
       return
     }
 
-    for (const ref of selectedRefs) {
-      const refObj = await repo.getReference(ref)
-      refObj.delete()
+    for (const branch of selectedBranchs) {
+      const branchObj = await repo.getReference(branch)
+      branchObj.delete()
     }
 
-    this.log('Delete selected refs success!')
+    this.log('Delete selected branchs success!')
   }
 }

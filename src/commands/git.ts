@@ -49,7 +49,7 @@ export default class Git extends Command {
     }
 
     for (const branch of selectedBranchs) {
-      const branchObj = await repo.getReference(branch)
+      const branchObj = await repo.getReference(`refs/heads/${branch}`)
       branchObj.delete()
     }
 

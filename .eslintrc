@@ -1,0 +1,8 @@
+{
+  "extends": ["oclif", "oclif-typescript", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-await-in-loop": "off"
+  }
+}
